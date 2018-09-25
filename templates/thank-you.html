@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+   <html>
+
+     <head>
+     	{% block title %} Thank You ! {% endblock %}
+     	<link rell="stylesheet" type="text/css" href="/static/styles.css">
+ 	 </head>
+
+
+ 	 <body>
+ 	 	{% block content %}
+ 	 Thank you, {{ session['usernme'] }}. </br>
+ 	 
+ 	 <a href="/top-melons"> Return to Top Melons page. </a>
+
+ 	 {% endblock %}
+
+
+ 	 </body>
+
+   </html>

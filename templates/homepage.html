@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE>
+  <html>
+
+  	<head>
+  		{% block title %} Homepage {% endblock %}
+  		<link rel="stylesheet" type="text/css" href="/static/styles.css">
+  	</head>
+
+  	<!-- main -->
+  	<body>
+  		{% block content %}
+  		<h1> Ubermelon's Most Loved Melons </h1> <!-- header that says “UberMelon’s Most Loved Melons” -->
+
+	<!-- input form -->
+	<form action ="/get-name">
+		Enter Name <input type='text' name='username' required> <!-- "name input should be required" -->
+		<input type='submit'>
+    </form>
+	 {% endblock %}
+	</body>
+
+  </html>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+	<html>
+
+	<head>
+		{% block title %} Top Melons {% endblock %}
+		<link rel="stylesheet" type="text/css" href="/static/styles.css">
+	</head>
+
+	<body>
+
+		<!--coming in from homepage -->
+		{% block content %}
+		<h1> Welcome, {{ session['username'] }} </h1> <!-- "Add a <h1> heading that says welcome" -->
+
+		<!-- four of the best melons -->
+		{% for melon in fav_melons %}
+		  <div class='melon-div'>
+		  	<h3> {{ session['username'] }}, this is a {{ fav_melons[melon]['name'] }} </h3>
+		  	<h2> Loved {{ fav_melons[melon]['num_loves'] }} times. </h2>
+		  	<img src={{ fav_melons[melon]['img'] }}>
+		  </div>
+		  {% endfor %}
+
+
+		</br>
+
+		<!-- fav melon form -->
+		Which is your favorite melon ?
+		<form action="/love-melon" method="POST">
+			<select name="melon_love">
+				{% for melon in fav_melons %}
+				<option value={{ melon }}> {{ fav_melons[melon]['name'] }} </option>
+ 				{% endfor %}
+ 				<input type='submit'>
+ 			</select>
+ 		</form>
+ 	  {% endblock %}
+
+
+ 	</body>
+
+    </html>
